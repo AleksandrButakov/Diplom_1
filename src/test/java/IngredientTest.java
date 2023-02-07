@@ -1,28 +1,5 @@
-/*
-public class Ingredient {
-
-    public IngredientType type;
-    public String name;
-    public float price;
-
-    public Ingredient(IngredientType type, String name, float price) {
-        this.type = type;
-        this.name = name;
-        this.price = price;
-    }
-    public float getPrice() {
-        return price;
-    }
-    public String getName() {
-        return name;
-    }
-    public IngredientType getType() {
-        return type;
-    }
-
-}
- */
-
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import praktikum.Ingredient;
@@ -41,7 +18,29 @@ public class IngredientTest {
     }
 
     @Parameterized.Parameters
-    public static
+    public static Object[][] getIngredientData() {
+        return new Object[][] {
+                {IngredientType.SAUCE, "Сырный", 89.9F},
+                {IngredientType.FILLING, "Паста сырная", 789.25F}
+        };
+    }
 
+    @Test
+    public void ingredientTypeTest() {
+        Ingredient ingredient = new Ingredient(type, name, price);
+        Assert.assertEquals(type, ingredient.getType());
+    }
+
+    @Test
+    public void ingredientNameTest() {
+        Ingredient ingredient = new Ingredient(type, name, price);
+        Assert.assertEquals(name, ingredient.getName());
+    }
+
+    @Test
+    public void ingredientPriceTest() {
+        Ingredient ingredient = new Ingredient(type,name,price);
+        Assert.assertEquals(price, ingredient.getPrice(), 0);
+    }
 
 }
