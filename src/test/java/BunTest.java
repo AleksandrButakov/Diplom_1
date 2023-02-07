@@ -6,17 +6,17 @@ import praktikum.Bun;
 
 @RunWith(Parameterized.class)
 public class BunTest {
-    private String bunName;
-    private float bunPrice;
+    private String name;
+    private float price;
 
-    public BunTest(String bunName, float bunPrice) {
-        this.bunName = bunName;
-        this.bunPrice = bunPrice;
+    public BunTest(String name, float price) {
+        this.name = name;
+        this.price = price;
     }
 
     @Parameterized.Parameters
     public static Object[][] getBunData() {
-        return new Object[][] {
+        return new Object[][]{
                 {"Клавиатура A4Tech-03", 1536.45F},
                 {"Лампа настольная L.23", 778.45F}
         };
@@ -24,14 +24,14 @@ public class BunTest {
 
     @Test
     public void bunGetNameTest() {
-        Bun bun = new Bun(bunName, bunPrice);
-        Assert.assertEquals(bunName, bun.getName());
+        Bun bun = new Bun(name, price);
+        Assert.assertEquals(name, bun.getName());
     }
 
     @Test
     public void bunGetPriceTest() {
-        Bun bun = new Bun(bunName, bunPrice);
-        Assert.assertEquals(bunPrice, bun.getPrice(), 0);
+        Bun bun = new Bun(name, price);
+        Assert.assertEquals(price, bun.getPrice(), 0);
     }
 
 }
