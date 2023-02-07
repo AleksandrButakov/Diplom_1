@@ -17,8 +17,9 @@ public class BunTest {
     @Parameterized.Parameters
     public static Object[][] getBunData() {
         return new Object[][]{
-                {"Клавиатура A4Tech-03", 1536.45F},
-                {"Лампа настольная L.23", 778.45F}
+                {"Булочка с маком", 38.45F},
+                {"Сосиска в тесте", 45.45F},
+                {"Пирожок с картошкой", 27.40F}
         };
     }
 
